@@ -8,7 +8,7 @@ const port=process.env.PORT || 5000;
 
 app.get('/search',async(req,res)=>{
     const {value}=req.query;
-    const response=await fetch(`https://api.edamam.com/search?app_id=900da95e&app_key=40698503668e0bb3897581f4766d77f9&q=${value}`);
+    const response=await fetch(`https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${value}`);
     const data=await response.json();
     res.json(data);
 }
